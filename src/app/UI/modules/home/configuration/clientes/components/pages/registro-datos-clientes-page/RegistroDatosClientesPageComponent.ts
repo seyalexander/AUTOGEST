@@ -1,9 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import Swal from 'sweetalert2';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
+
 import { clienteModel } from 'src/app/domain/models/clientes/clientes.model';
 import { GetClientesUseCases } from 'src/app/domain/useCase/get-clientes-use-case';
-import Swal from 'sweetalert2'
+
 
 
 @Component({
