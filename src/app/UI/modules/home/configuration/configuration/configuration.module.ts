@@ -3,17 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { ConfigurationRoutingModule } from './configuration-routing.module';
 import { ConfigurationPageComponent } from './components/configuration-page/configuration-page.component';
-import { SharedModule } from 'src/app/UI/shared/shared.module';
+
 
 
 @NgModule({
-  declarations: [
-    ConfigurationPageComponent
-  ],
-  imports: [
+    imports: [
     CommonModule,
     ConfigurationRoutingModule,
-    SharedModule
-  ]
+    ConfigurationPageComponent
+]
 })
 export class ConfigurationModule { }

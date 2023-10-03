@@ -8,8 +8,8 @@ describe('ButtonTextIconSidebarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ButtonTextIconSidebarComponent]
-    });
+    imports: [ButtonTextIconSidebarComponent]
+});
     fixture = TestBed.createComponent(ButtonTextIconSidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

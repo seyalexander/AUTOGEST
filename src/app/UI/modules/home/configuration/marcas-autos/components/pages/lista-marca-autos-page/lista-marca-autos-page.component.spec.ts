@@ -15,18 +15,16 @@ describe('ListaMarcaAutosPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    imports: [
+        SharedModule,
         ListaMarcaAutosPageComponent,
         TableDatosMarcasAutosComponent,
         RegistroDatosMarcasAutosComponent
-      ],
-      imports: [
-        SharedModule
-      ],
-      providers:[
-        {provide: marcaAutosGateway, useClass: MarcaAutosApiService},
-      ]
-    });
+    ],
+    providers: [
+        { provide: marcaAutosGateway, useClass: MarcaAutosApiService },
+    ]
+});
     fixture = TestBed.createComponent(ListaMarcaAutosPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

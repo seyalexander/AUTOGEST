@@ -1,9 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-header-pages-configuration',
-  templateUrl: './header-pages-configuration.component.html',
-  styleUrls: ['./header-pages-configuration.component.css']
+    selector: 'app-header-pages-configuration',
+    templateUrl: './header-pages-configuration.component.html',
+    styleUrls: ['./header-pages-configuration.component.css'],
+    standalone: true,
+    imports: [FormsModule]
 })
 export class HeaderPagesConfigurationComponent {
 

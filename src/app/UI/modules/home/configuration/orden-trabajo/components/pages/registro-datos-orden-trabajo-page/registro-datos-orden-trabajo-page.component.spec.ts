@@ -8,8 +8,8 @@ describe('RegistroDatosOrdenTrabajoPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RegistroDatosOrdenTrabajoPageComponent]
-    });
+    imports: [RegistroDatosOrdenTrabajoPageComponent]
+});
     fixture = TestBed.createComponent(RegistroDatosOrdenTrabajoPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

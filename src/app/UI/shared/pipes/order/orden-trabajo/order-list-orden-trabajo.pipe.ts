@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { ordenTrabajoModel } from 'src/app/domain/models/orden-trabajo/orden-trabajo.model';
 
 @Pipe({
-  name: 'orderListOrdenTrabajo'
+    name: 'orderListOrdenTrabajo',
+    standalone: true
 })
 export class OrderListOrdenTrabajoPipe implements PipeTransform {
 

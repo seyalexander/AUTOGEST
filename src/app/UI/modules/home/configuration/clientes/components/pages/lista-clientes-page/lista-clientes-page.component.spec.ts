@@ -15,20 +15,18 @@ describe('ListaClientesPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    imports: [
+        AppModule,
+        SharedModule,
+        NgxPaginationModule,
         ListaClientesPageComponent,
         TableDatosClientesComponent,
         RegistroDatosClientesPageComponent
-      ],
-      imports: [
-        AppModule,
-        SharedModule,
-        NgxPaginationModule
-      ],
-      providers: [
-        {provide: clientesGateway, useClass: ClientesApiService},
-      ]
-    });
+    ],
+    providers: [
+        { provide: clientesGateway, useClass: ClientesApiService },
+    ]
+});
     fixture = TestBed.createComponent(ListaClientesPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

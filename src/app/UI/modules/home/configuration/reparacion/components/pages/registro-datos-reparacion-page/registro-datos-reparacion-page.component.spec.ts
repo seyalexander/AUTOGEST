@@ -8,8 +8,8 @@ describe('RegistroDatosReparacionPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RegistroDatosReparacionPageComponent]
-    });
+    imports: [RegistroDatosReparacionPageComponent]
+});
     fixture = TestBed.createComponent(RegistroDatosReparacionPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

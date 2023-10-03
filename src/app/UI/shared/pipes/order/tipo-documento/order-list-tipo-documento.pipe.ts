@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { tipoDocumentosModel } from 'src/app/domain/models/tipo-documentos/tipo-documentos.model';
 
 @Pipe({
-  name: 'orderListTipoDocumento'
+    name: 'orderListTipoDocumento',
+    standalone: true
 })
 export class OrderListTipoDocumentoPipe implements PipeTransform {
 

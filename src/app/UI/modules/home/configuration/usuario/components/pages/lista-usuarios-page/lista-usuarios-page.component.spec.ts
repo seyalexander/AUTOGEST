@@ -13,18 +13,16 @@ describe('ListaUsuariosPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    imports: [
+        SharedModule,
         ListaUsuariosPageComponent,
         TableDatosUsuariosComponent,
         RegistroDatosUsuarioPageComponent
-      ],
-      imports: [
-        SharedModule
-      ],
-      providers: [
-        {provide: usuariosGateway, useClass: UsuariosApiService},
-      ]
-    });
+    ],
+    providers: [
+        { provide: usuariosGateway, useClass: UsuariosApiService },
+    ]
+});
     fixture = TestBed.createComponent(ListaUsuariosPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

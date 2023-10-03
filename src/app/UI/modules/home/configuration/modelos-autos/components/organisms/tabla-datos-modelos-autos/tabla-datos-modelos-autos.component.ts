@@ -1,11 +1,16 @@
 import { Component, Input } from '@angular/core';
 import { modeloAutosModel } from 'src/app/domain/models/modelo-autos/modelo-autos.model';
+import { OrderListModeloAutosPipe } from '../../../../../../../shared/pipes/order/modelo-autos/order-list-modelo-autos.pipe';
+import { NgFor } from '@angular/common';
+import { ThTablesIconTextComponent } from '../../../../../../../shared/components/atoms/th-tables-icon-text/th-tables-icon-text.component';
 
 
 @Component({
-  selector: 'app-tabla-datos-modelos-autos',
-  templateUrl: './tabla-datos-modelos-autos.component.html',
-  styleUrls: ['./tabla-datos-modelos-autos.component.css']
+    selector: 'app-tabla-datos-modelos-autos',
+    templateUrl: './tabla-datos-modelos-autos.component.html',
+    styleUrls: ['./tabla-datos-modelos-autos.component.css'],
+    standalone: true,
+    imports: [ThTablesIconTextComponent, NgFor, OrderListModeloAutosPipe]
 })
 export class TablaDatosModelosAutosComponent {
   @Input() dataModeloAutos:  Array<modeloAutosModel> = [];

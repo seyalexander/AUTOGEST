@@ -13,14 +13,12 @@ describe('AsideComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    imports: [
+        RouterTestingModule,
         AsideComponent,
         ButtonTextIconSidebarComponent
-      ],
-      imports: [
-        RouterTestingModule
-      ]
-    });
+    ]
+});
     fixture = TestBed.createComponent(AsideComponent);
     component = fixture.componentInstance;
 

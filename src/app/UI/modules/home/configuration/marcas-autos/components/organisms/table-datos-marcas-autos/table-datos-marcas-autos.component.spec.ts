@@ -9,9 +9,8 @@ describe('TableDatosMarcasAutosComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TableDatosMarcasAutosComponent],
-      imports: [SharedModule]
-    });
+    imports: [SharedModule, TableDatosMarcasAutosComponent]
+});
     fixture = TestBed.createComponent(TableDatosMarcasAutosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

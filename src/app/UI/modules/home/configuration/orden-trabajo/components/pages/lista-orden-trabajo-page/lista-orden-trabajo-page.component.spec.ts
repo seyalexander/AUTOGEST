@@ -13,18 +13,16 @@ describe('ListaOrdenTrabajoPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    imports: [
+        SharedModule,
         ListaOrdenTrabajoPageComponent,
         TableDatosOrdenTrabajoComponent,
-      RegistroDatosOrdenTrabajoPageComponent
-      ],
-      imports: [
-        SharedModule
-      ],
-      providers: [
-        {provide: ordenTrabajoGateway, useClass: OrdenTrabajoApiService},
-      ]
-    });
+        RegistroDatosOrdenTrabajoPageComponent
+    ],
+    providers: [
+        { provide: ordenTrabajoGateway, useClass: OrdenTrabajoApiService },
+    ]
+});
     fixture = TestBed.createComponent(ListaOrdenTrabajoPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

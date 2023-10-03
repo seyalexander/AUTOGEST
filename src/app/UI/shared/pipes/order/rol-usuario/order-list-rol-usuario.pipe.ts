@@ -3,7 +3,8 @@ import { rolUsuarioModel } from 'src/app/domain/models/rol-usuario/rol-usaurio.m
 ;
 
 @Pipe({
-  name: 'orderListRolUsuario'
+    name: 'orderListRolUsuario',
+    standalone: true
 })
 export class OrderListRolUsuarioPipe implements PipeTransform {
 

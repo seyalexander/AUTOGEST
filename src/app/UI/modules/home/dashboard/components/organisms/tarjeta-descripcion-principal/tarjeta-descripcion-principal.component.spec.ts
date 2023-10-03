@@ -8,8 +8,8 @@ describe('TarjetaDescripcionPrincipalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TarjetaDescripcionPrincipalComponent]
-    });
+    imports: [TarjetaDescripcionPrincipalComponent]
+});
     fixture = TestBed.createComponent(TarjetaDescripcionPrincipalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

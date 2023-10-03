@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { autosModel } from 'src/app/domain/models/autos/autos.model';
 
 @Pipe({
-  name: 'orderListAutos'
+    name: 'orderListAutos',
+    standalone: true
 })
 export class OrderListAutosPipe implements PipeTransform {
 

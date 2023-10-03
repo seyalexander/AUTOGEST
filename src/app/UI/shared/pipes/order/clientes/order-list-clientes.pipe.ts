@@ -2,7 +2,8 @@ import { clienteModel } from './../../../../../domain/models/clientes/clientes.m
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'orderListClientes'
+    name: 'orderListClientes',
+    standalone: true
 })
 export class OrderListClientesPipe implements PipeTransform {
 

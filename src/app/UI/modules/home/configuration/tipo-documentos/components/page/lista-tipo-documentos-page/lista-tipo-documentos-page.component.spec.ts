@@ -13,18 +13,16 @@ describe('ListaTipoDocumentosPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    imports: [
+        SharedModule,
         ListaTipoDocumentosPageComponent,
         TablaDatosTipoDocumentosComponent,
         RegistroDatosTipoDocumentosPageComponent
-      ],
-      imports: [
-        SharedModule
-      ],
-      providers: [
-        {provide: tipoDocumentoGateway, useClass: TipoDocumentoApiService},
-      ]
-    });
+    ],
+    providers: [
+        { provide: tipoDocumentoGateway, useClass: TipoDocumentoApiService },
+    ]
+});
     fixture = TestBed.createComponent(ListaTipoDocumentosPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-button-text-icon-sidebar',
-  templateUrl: './button-text-icon-sidebar.component.html',
-  styleUrls: ['./button-text-icon-sidebar.component.css']
+    selector: 'app-button-text-icon-sidebar',
+    templateUrl: './button-text-icon-sidebar.component.html',
+    styleUrls: ['./button-text-icon-sidebar.component.css'],
+    standalone: true
 })
 export class ButtonTextIconSidebarComponent {
   @Input() iconLeftButton?: String = '';

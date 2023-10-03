@@ -1,10 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { usuarioModel } from 'src/app/domain/models/usuario/usuario.model';
+import { OrderListUsuarioPipe } from '../../../../../../../shared/pipes/order/usuario/order-list-usuario.pipe';
+import { NgFor } from '@angular/common';
+import { ThTablesIconTextComponent } from '../../../../../../../shared/components/atoms/th-tables-icon-text/th-tables-icon-text.component';
 
 @Component({
-  selector: 'app-table-datos-usuarios',
-  templateUrl: './table-datos-usuarios.component.html',
-  styleUrls: ['./table-datos-usuarios.component.css']
+    selector: 'app-table-datos-usuarios',
+    templateUrl: './table-datos-usuarios.component.html',
+    styleUrls: ['./table-datos-usuarios.component.css'],
+    standalone: true,
+    imports: [ThTablesIconTextComponent, NgFor, OrderListUsuarioPipe]
 })
 export class TableDatosUsuariosComponent {
   @Input() dataUsuarios:  Array<usuarioModel> = [];

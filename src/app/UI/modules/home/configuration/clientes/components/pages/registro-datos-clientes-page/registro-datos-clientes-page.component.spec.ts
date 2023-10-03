@@ -12,12 +12,11 @@ describe('RegistroDatosClientesPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RegistroDatosClientesPageComponent],
-      imports: [FormsModule, HttpClientTestingModule, ReactiveFormsModule],
-      providers: [
-        {provide: clientesGateway, useClass: ClientesApiService},
-      ]
-    });
+    imports: [FormsModule, HttpClientTestingModule, ReactiveFormsModule, RegistroDatosClientesPageComponent],
+    providers: [
+        { provide: clientesGateway, useClass: ClientesApiService },
+    ]
+});
     fixture = TestBed.createComponent(RegistroDatosClientesPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

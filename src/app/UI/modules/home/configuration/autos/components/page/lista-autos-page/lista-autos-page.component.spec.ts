@@ -12,10 +12,9 @@ describe('ListaAutosPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListaAutosPageComponent, TableDatosAutosComponent,
-        RegistroDatosAutosPageComponent,],
-      imports: [AppModule, SharedModule],
-    });
+    imports: [AppModule, SharedModule, ListaAutosPageComponent, TableDatosAutosComponent,
+        RegistroDatosAutosPageComponent],
+});
     fixture = TestBed.createComponent(ListaAutosPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

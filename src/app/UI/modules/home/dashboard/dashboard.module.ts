@@ -8,14 +8,12 @@ import { TarjetaDescripcionPrincipalComponent } from './components/organisms/tar
 
 
 @NgModule({
-  declarations: [
-    DashboardPageComponent,
-    TargetDataOrganismsComponent,
-    TarjetaDescripcionPrincipalComponent
-  ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        DashboardRoutingModule,
+        DashboardPageComponent,
+        TargetDataOrganismsComponent,
+        TarjetaDescripcionPrincipalComponent
+    ]
 })
 export class DashboardModule { }

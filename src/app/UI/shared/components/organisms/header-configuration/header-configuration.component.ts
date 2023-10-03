@@ -1,10 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ButtonTextIconSidebarComponent } from '../../atoms/button-text-icon-sidebar/button-text-icon-sidebar.component';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-header-configuration',
-  templateUrl: './header-configuration.component.html',
-  styleUrls: ['./header-configuration.component.css']
+    selector: 'app-header-configuration',
+    templateUrl: './header-configuration.component.html',
+    styleUrls: ['./header-configuration.component.css'],
+    standalone: true,
+    imports: [NgFor, ButtonTextIconSidebarComponent, RouterLink]
 })
 export class HeaderConfigurationComponent {
   mainMenu: {

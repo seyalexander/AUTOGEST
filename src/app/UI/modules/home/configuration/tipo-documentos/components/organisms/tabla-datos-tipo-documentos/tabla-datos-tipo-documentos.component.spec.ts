@@ -9,9 +9,8 @@ describe('TablaDatosTipoDocumentosComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TablaDatosTipoDocumentosComponent],
-      imports: [SharedModule]
-    });
+    imports: [SharedModule, TablaDatosTipoDocumentosComponent]
+});
     fixture = TestBed.createComponent(TablaDatosTipoDocumentosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

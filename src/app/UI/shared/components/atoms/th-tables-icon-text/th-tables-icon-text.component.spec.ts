@@ -8,8 +8,8 @@ describe('ThTablesIconTextComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ThTablesIconTextComponent]
-    });
+    imports: [ThTablesIconTextComponent]
+});
     fixture = TestBed.createComponent(ThTablesIconTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

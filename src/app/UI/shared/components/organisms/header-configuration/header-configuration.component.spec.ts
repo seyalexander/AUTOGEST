@@ -13,12 +13,9 @@ describe('HeaderConfigurationComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        HeaderConfigurationComponent,
-        ButtonTextIconSidebarComponent
-      ],
-      imports: [RouterTestingModule],
-    });
+    imports: [RouterTestingModule, HeaderConfigurationComponent,
+        ButtonTextIconSidebarComponent],
+});
 
     fixture = TestBed.createComponent(HeaderConfigurationComponent);
     component = fixture.componentInstance;

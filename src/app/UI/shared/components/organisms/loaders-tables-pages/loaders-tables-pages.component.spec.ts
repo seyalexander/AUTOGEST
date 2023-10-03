@@ -8,8 +8,8 @@ describe('LoadersTablesPagesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LoadersTablesPagesComponent]
-    });
+    imports: [LoadersTablesPagesComponent]
+});
     fixture = TestBed.createComponent(LoadersTablesPagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

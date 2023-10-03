@@ -14,16 +14,13 @@ describe('ListaEmpleadosPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        ListaEmpleadosPageComponent,
+    imports: [AppModule, SharedModule, ListaEmpleadosPageComponent,
         TableDatosEmpleadosComponent,
-        RegistroDatosEmpleadosPageComponent
-      ],
-      imports: [AppModule, SharedModule],
-      providers: [
-        {provide: empleadoGateway, useClass: EmpleadosApiService},
-      ]
-    });
+        RegistroDatosEmpleadosPageComponent],
+    providers: [
+        { provide: empleadoGateway, useClass: EmpleadosApiService },
+    ]
+});
     fixture = TestBed.createComponent(ListaEmpleadosPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

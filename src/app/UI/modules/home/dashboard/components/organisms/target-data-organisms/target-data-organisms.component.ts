@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-target-data-organisms',
-  templateUrl: './target-data-organisms.component.html',
-  styleUrls: ['./target-data-organisms.component.css']
+    selector: 'app-target-data-organisms',
+    templateUrl: './target-data-organisms.component.html',
+    styleUrls: ['./target-data-organisms.component.css'],
+    standalone: true
 })
 export class TargetDataOrganismsComponent {
   @Input() titleTarget: String = '';

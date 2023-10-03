@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { reparacionModel } from 'src/app/domain/models/reparacion/reparacion.model';
 
 @Pipe({
-  name: 'orderListReparacion'
+    name: 'orderListReparacion',
+    standalone: true
 })
 export class OrderListReparacionPipe implements PipeTransform {
 

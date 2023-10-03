@@ -10,12 +10,12 @@ describe('HomePageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePageComponent],
-      imports: [
+    imports: [
         SharedModule,
-        RouterTestingModule
-      ]
-    });
+        RouterTestingModule,
+        HomePageComponent
+    ]
+});
     fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

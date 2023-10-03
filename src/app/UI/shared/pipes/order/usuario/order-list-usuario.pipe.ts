@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { usuarioModel } from 'src/app/domain/models/usuario/usuario.model';
 
 @Pipe({
-  name: 'orderListUsuario'
+    name: 'orderListUsuario',
+    standalone: true
 })
 export class OrderListUsuarioPipe implements PipeTransform {
 

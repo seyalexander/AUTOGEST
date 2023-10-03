@@ -13,18 +13,16 @@ describe('ListaReparacionPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    imports: [
+        SharedModule,
         ListaReparacionPageComponent,
         TableDatosReparacionComponent,
         RegistroDatosReparacionPageComponent
-      ],
-      imports: [
-        SharedModule
-      ],
-      providers: [
-        {provide: reparacionGateway, useClass: ReparacionApiService},
-      ]
-    });
+    ],
+    providers: [
+        { provide: reparacionGateway, useClass: ReparacionApiService },
+    ]
+});
     fixture = TestBed.createComponent(ListaReparacionPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

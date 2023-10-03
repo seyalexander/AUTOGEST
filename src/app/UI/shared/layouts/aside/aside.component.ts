@@ -1,10 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ButtonTextIconSidebarComponent } from '../../components/atoms/button-text-icon-sidebar/button-text-icon-sidebar.component';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-aside',
-  templateUrl: './aside.component.html',
-  styleUrls: ['./aside.component.css']
+    selector: 'app-aside',
+    templateUrl: './aside.component.html',
+    styleUrls: ['./aside.component.css'],
+    standalone: true,
+    imports: [NgFor, ButtonTextIconSidebarComponent, RouterLink]
 })
 export class AsideComponent {
   mainMenu: {

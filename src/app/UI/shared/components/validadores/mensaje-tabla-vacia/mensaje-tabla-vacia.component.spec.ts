@@ -8,8 +8,8 @@ describe('MensajeTablaVaciaComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MensajeTablaVaciaComponent]
-    });
+    imports: [MensajeTablaVaciaComponent]
+});
     fixture = TestBed.createComponent(MensajeTablaVaciaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

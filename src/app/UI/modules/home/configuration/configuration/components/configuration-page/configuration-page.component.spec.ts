@@ -12,12 +12,12 @@ describe('ConfigurationPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ConfigurationPageComponent],
-      imports: [
+    imports: [
         SharedModule,
-        RouterTestingModule
-      ]
-    });
+        RouterTestingModule,
+        ConfigurationPageComponent
+    ]
+});
     fixture = TestBed.createComponent(ConfigurationPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

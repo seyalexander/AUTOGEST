@@ -25,22 +25,21 @@ import { UsuariosApiService } from './infraestrcuture/driven-adapter/usuarios/us
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent],
+    imports: [RouterTestingModule, AppComponent],
     providers: [
-      {provide: clientesGateway, useClass: ClientesApiService},
-      {provide: marcaAutosGateway, useClass: MarcaAutosApiService},
-      {provide: modeloAutosGateway, useClass: ModeloAutosApiService},
-      {provide: autosGateway, useClass: AutosApiService},
-      {provide: tipoDocumentoGateway, useClass: TipoDocumentoApiService},
-      {provide: empleadoGateway, useClass: EmpleadosApiService},
-      {provide: ordenTrabajoGateway, useClass: OrdenTrabajoApiService},
-      {provide: reparacionGateway, useClass: ReparacionApiService},
-      {provide: rolUsuarioGateway, useClass: RolUsuarioApiService},
-      {provide: usuariosGateway, useClass: UsuariosApiService},
-      {provide: LocationStrategy, useClass: HashLocationStrategy },
+        { provide: clientesGateway, useClass: ClientesApiService },
+        { provide: marcaAutosGateway, useClass: MarcaAutosApiService },
+        { provide: modeloAutosGateway, useClass: ModeloAutosApiService },
+        { provide: autosGateway, useClass: AutosApiService },
+        { provide: tipoDocumentoGateway, useClass: TipoDocumentoApiService },
+        { provide: empleadoGateway, useClass: EmpleadosApiService },
+        { provide: ordenTrabajoGateway, useClass: OrdenTrabajoApiService },
+        { provide: reparacionGateway, useClass: ReparacionApiService },
+        { provide: rolUsuarioGateway, useClass: RolUsuarioApiService },
+        { provide: usuariosGateway, useClass: UsuariosApiService },
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
     ],
-  }));
+}));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

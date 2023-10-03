@@ -2,11 +2,18 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { clienteModel } from 'src/app/domain/models/clientes/clientes.model';
 import { GetClientesUseCases } from 'src/app/domain/useCase/get-clientes-use-case';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { TableDatosClientesComponent } from '../../organisms/table-datos-clientes/table-datos-clientes.component';
+import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
+import { RegistroDatosClientesPageComponent } from '../registro-datos-clientes-page/RegistroDatosClientesPageComponent';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-lista-clientes-page',
-  templateUrl: './lista-clientes-page.component.html',
-  styleUrls: ['./lista-clientes-page.component.css']
+    selector: 'app-lista-clientes-page',
+    templateUrl: './lista-clientes-page.component.html',
+    styleUrls: ['./lista-clientes-page.component.css'],
+    standalone: true,
+    imports: [NgIf, RegistroDatosClientesPageComponent, HeaderPagesConfigurationComponent, TableDatosClientesComponent, NgxPaginationModule]
 })
 export class ListaClientesPageComponent implements OnDestroy {
 

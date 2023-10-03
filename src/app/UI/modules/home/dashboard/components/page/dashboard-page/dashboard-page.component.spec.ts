@@ -10,12 +10,10 @@ describe('DashboardPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        DashboardPageComponent,
+    imports: [DashboardPageComponent,
         TargetDataOrganismsComponent,
-        TarjetaDescripcionPrincipalComponent
-      ]
-    });
+        TarjetaDescripcionPrincipalComponent]
+});
     fixture = TestBed.createComponent(DashboardPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

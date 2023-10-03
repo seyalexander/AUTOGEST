@@ -10,9 +10,8 @@ describe('HeaderPagesConfigurationComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderPagesConfigurationComponent],
-      imports: [RouterTestingModule, FormsModule],
-    });
+    imports: [RouterTestingModule, FormsModule, HeaderPagesConfigurationComponent],
+});
     fixture = TestBed.createComponent(HeaderPagesConfigurationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

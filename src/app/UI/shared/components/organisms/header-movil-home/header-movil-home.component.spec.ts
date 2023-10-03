@@ -8,8 +8,8 @@ describe('HeaderMovilHomeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderMovilHomeComponent]
-    });
+    imports: [HeaderMovilHomeComponent]
+});
     fixture = TestBed.createComponent(HeaderMovilHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

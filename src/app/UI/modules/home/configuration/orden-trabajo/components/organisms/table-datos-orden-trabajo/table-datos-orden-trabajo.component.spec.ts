@@ -11,9 +11,8 @@ describe('TableDatosOrdenTrabajoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TableDatosOrdenTrabajoComponent],
-      imports: [SharedModule],
-    });
+    imports: [SharedModule, TableDatosOrdenTrabajoComponent],
+});
     fixture = TestBed.createComponent(TableDatosOrdenTrabajoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

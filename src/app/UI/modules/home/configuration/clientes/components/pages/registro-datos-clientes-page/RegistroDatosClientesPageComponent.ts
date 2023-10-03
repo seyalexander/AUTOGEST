@@ -1,18 +1,22 @@
 import Swal from 'sweetalert2';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Router } from '@angular/router';
 
 import { clienteModel } from 'src/app/domain/models/clientes/clientes.model';
 import { GetClientesUseCases } from 'src/app/domain/useCase/get-clientes-use-case';
+import { MensajeDatosIncorrectosComponent } from '../../../../../../../shared/components/validadores/mensaje-datos-incorrectos/mensaje-datos-incorrectos.component';
+import { NgIf } from '@angular/common';
 
 
 
 @Component({
-  selector: 'app-registro-datos-clientes-page',
-  templateUrl: './registro-datos-clientes-page.component.html',
-  styleUrls: ['./registro-datos-clientes-page.component.css']
+    selector: 'app-registro-datos-clientes-page',
+    templateUrl: './registro-datos-clientes-page.component.html',
+    styleUrls: ['./registro-datos-clientes-page.component.css'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, NgIf, MensajeDatosIncorrectosComponent]
 })
 export class RegistroDatosClientesPageComponent {
 

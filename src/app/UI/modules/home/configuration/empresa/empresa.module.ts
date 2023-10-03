@@ -6,12 +6,10 @@ import { ListaDatosEmpresaComponent } from './components/pages/lista-datos-empre
 
 
 @NgModule({
-  declarations: [
-    ListaDatosEmpresaComponent
-  ],
-  imports: [
-    CommonModule,
-    EmpresaRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        EmpresaRoutingModule,
+        ListaDatosEmpresaComponent
+    ]
 })
 export class EmpresaModule { }

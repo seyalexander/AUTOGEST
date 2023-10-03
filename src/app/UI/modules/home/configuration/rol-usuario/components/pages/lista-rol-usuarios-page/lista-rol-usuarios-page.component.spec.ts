@@ -14,16 +14,13 @@ describe('ListaRolUsuariosPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        ListaRolUsuariosPageComponent,
+    imports: [AppModule, SharedModule, ListaRolUsuariosPageComponent,
         TableDatosRolUsuariosComponent,
-        RegistroDatosRolUsuarioPageComponent
-      ],
-      imports: [AppModule, SharedModule],
-      providers: [
+        RegistroDatosRolUsuarioPageComponent],
+    providers: [
         { provide: rolUsuarioGateway, useClass: RolUsuarioApiService }
-      ]
-    });
+    ]
+});
     fixture = TestBed.createComponent(ListaRolUsuariosPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
