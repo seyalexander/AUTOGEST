@@ -1,0 +1,37 @@
+<table class="table table-striped table-inverse table-responsive">
+  <thead class="thead-inverse">
+    <tr>
+      <th >
+        <app-th-tables-icon-text
+          [nombreTh]="'N°'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th >
+        <app-th-tables-icon-text
+          [nombreTh]="'Modelo'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th >Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor=" let item of dataTipoDocumento | orderListTipoDocumento : optionSort.property : optionSort.order">
+
+      <td scope="row">{{item.id_Tipo_Documento}}</td>
+      <td>{{item.tipo_Documento}}</td>
+      <td>
+        <button class="btn-option-table btn-editar">
+          <i class="uil uil-pen"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn-option-table btn-eliminar">
+          <i class="uil uil-trash"></i>
+        </button>
+      </td>
+
+  </tbody>
+</table>
+

@@ -1,0 +1,21 @@
+<main class="sidebar">
+  <div class="filter"></div>
+  <div class="container-datos">
+    <div class="logo-empresa">
+
+      <div class="bg-imagen">
+        <img src="" alt="">
+      </div>
+      <span>ELHIDAJA</span>
+    </div>
+    <ul>
+      <li *ngFor="let item of mainMenu.defaultOptions">
+        <app-button-text-icon-sidebar (click)="abrirComponente()"  [mode]="'aside'" [iconLeftButton]="'uil-play'" [textButton]="item.name" [routerLink]="item.route"></app-button-text-icon-sidebar>
+      </li>
+      <li *ngFor="let item of mainMenu.accessLink">
+        <app-button-text-icon-sidebar (click)="abrirComponente()" [mode]="'aside'" [iconLeftButton]="'uil-play'" [textButton]="item.name" [routerLink]="item.route"></app-button-text-icon-sidebar>
+      </li>
+    </ul>
+  </div>
+
+</main>

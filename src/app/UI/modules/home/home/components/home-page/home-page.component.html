@@ -1,0 +1,16 @@
+<article>
+  <aside>
+    <div class="menu-descktop">
+      <app-aside></app-aside>
+    </div>
+    <app-header-movil-home (abrirComponenteEvent)="mostrarComponente()"></app-header-movil-home>
+  </aside>
+
+  <div class="menu-movil" *ngIf="showMenu">
+    <app-aside (abrirComponenteEvent)="mostrarComponente()"></app-aside>
+  </div>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</article>

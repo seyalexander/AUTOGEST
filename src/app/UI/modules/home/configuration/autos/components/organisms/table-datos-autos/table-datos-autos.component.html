@@ -1,0 +1,54 @@
+<table class="table table-striped table-inverse table-responsive">
+  <thead class="thead-inverse">
+    <tr>
+      <th (click)="cambiarOrden('id_Auto')">
+        <app-th-tables-icon-text
+          [nombreTh]="'N°'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th (click)="cambiarOrden('nombre_Marca')">
+        <app-th-tables-icon-text
+          [nombreTh]="'Marca'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th (click)="cambiarOrden('Modelo')">
+        <app-th-tables-icon-text
+          [nombreTh]="'Modelo'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th (click)="cambiarOrden('Matricula')">
+        <app-th-tables-icon-text
+          [nombreTh]="'Matrícula'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th (click)="cambiarOrden('razon_social')">
+        <app-th-tables-icon-text
+          [nombreTh]="'Cliente'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th >Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor=" let item of dataAutos | orderListAutos : optionSort.property : optionSort.order" >
+
+      <td scope="row">{{item.id_Auto}}</td>
+      <td>{{item.id_Modelo.id_Marca.nombre_Marca}}</td>
+      <td>{{item.id_Modelo.Modelo}}</td>
+      <td>{{item.Matricula}}</td>
+      <td>{{item.id_Cliente.razon_Social}}</td>
+      <td>
+        <button class="btn-option-table btn-editar">
+          <i class="uil uil-pen"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn-option-table btn-eliminar">
+          <i class="uil uil-trash"></i>
+        </button>
+      </td>
+
+  </tbody>
+</table>

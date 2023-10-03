@@ -1,0 +1,68 @@
+<table class="table table-striped table-inverse table-responsive">
+  <thead class="thead-inverse">
+    <tr>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'N°'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'N° Orden'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Descripción'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'A. Matrícula'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Emp. Nombre'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Emp. Ape.'"
+        ></app-th-tables-icon-text>
+      </th>
+      <th >Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor=" let item of dataOrdenTrabajo | orderListOrdenTrabajo : optionSort.property : optionSort.order">
+
+      <td scope="row">{{item.Id_Orden_Trabajo}}</td>
+      <td>{{ item.Numero_Orden }}</td>
+      <td>{{item.Descripcion_Problema}}</td>
+      <td>{{item.Id_Auto_Fk.Matricula}}</td>
+      <td>{{item.Id_Empleado_Fk.Nombres}}</td>
+      <td>{{item.Id_Empleado_Fk.Apellidos}}</td>
+      <td>
+        <button class="btn-option-table btn-editar">
+          <i class="uil uil-pen"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn-option-table btn-eliminar">
+          <i class="uil uil-trash"></i>
+        </button>
+      </td>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
