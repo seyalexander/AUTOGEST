@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,7 +7,6 @@ import { ListaClientesPageComponent } from './components/pages/lista-clientes-pa
 import { SharedModule } from 'src/app/UI/shared/shared.module';
 import { TableDatosClientesComponent } from './components/organisms/table-datos-clientes/table-datos-clientes.component';
 import { RegistroDatosClientesPageComponent } from './components/pages/registro-datos-clientes-page/RegistroDatosClientesPageComponent';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
