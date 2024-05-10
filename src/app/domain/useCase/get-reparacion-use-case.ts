@@ -17,4 +17,16 @@ export class GetReparacionUseCases {
     return this._reparacionGateWay.getAll();
   }
 
+  newReparacion(reparaciones: reparacionModel): Observable<Object> {
+    return this._reparacionGateWay.newReparacion(reparaciones)
+  }
+
+  getById(id: number): Observable<reparacionModel> {
+    return this._reparacionGateWay.getById(id)
+  }
+
+  updateProductos(id: number, reparaciones: reparacionModel): Observable<Object> {
+    return this._reparacionGateWay.updateReparacion(id, reparaciones)
+  }
+
 }

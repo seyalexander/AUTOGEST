@@ -3,7 +3,7 @@ import { modeloAutosModel } from "../modelo-autos/modelo-autos.model";
 
 export class autosModel {
   id_Auto: String | number = '';
-  Matricula: String = '';
-  id_Modelo: modeloAutosModel = {} as modeloAutosModel;
-  id_Cliente: clienteModel = {} as clienteModel;
+  matricula: String = '';
+  idModeloFk: modeloAutosModel = {} as modeloAutosModel;
+  idClienteFk: clienteModel = {} as clienteModel;
 }

@@ -4,27 +4,27 @@
       <th (click)="cambiarOrden('id_Auto')">
         <app-th-tables-icon-text
           [nombreTh]="'N°'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th (click)="cambiarOrden('nombre_Marca')">
         <app-th-tables-icon-text
           [nombreTh]="'Marca'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th (click)="cambiarOrden('Modelo')">
         <app-th-tables-icon-text
           [nombreTh]="'Modelo'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th (click)="cambiarOrden('Matricula')">
         <app-th-tables-icon-text
           [nombreTh]="'Matrícula'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th (click)="cambiarOrden('razon_social')">
         <app-th-tables-icon-text
           [nombreTh]="'Cliente'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >Editar</th>
       <th>Eliminar</th>
@@ -35,12 +35,12 @@
     <tr *ngFor=" let item of dataAutos | orderListAutos : optionSort.property : optionSort.order" >
 
       <td scope="row">{{item.id_Auto}}</td>
-      <td>{{item.id_Modelo.id_Marca.nombre_Marca}}</td>
-      <td>{{item.id_Modelo.Modelo}}</td>
-      <td>{{item.Matricula}}</td>
-      <td>{{item.id_Cliente.razon_Social}}</td>
+      <td>{{item.idModeloFk.idMarcaFK.marca}}</td>
+      <td>{{item.idModeloFk.modelo}}</td>
+      <td>{{item.matricula}}</td>
+      <td>{{item.idClienteFk.razon_Social}}</td>
       <td>
-        <button class="btn-option-table btn-editar">
+        <button (click)="getById(item.id_Auto)" class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
         </button>
       </td>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { empleadoModel } from 'src/app/domain/models/empleado/empleado.model';
 import { OrderListEmpleadosPipe } from '../../../../../../../shared/pipes/order/empleados/order-list-empleados.pipe';
 import { NgFor } from '@angular/common';
@@ -22,5 +22,23 @@ export class TableDatosEmpleadosComponent {
       property,
       order: order == 'asc' ? 'desc' :'asc'
     }
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA EJECUTAR UNA FUNCIÓN DEL COMPONENTE HIJO AL PADRE
+  //============================================================================
+
+  @Output() cerrarUpdateComponenteEvent = new EventEmitter<void>();
+  cerrarUpdateComponente(id_empleado: any) {
+    this.cerrarUpdateComponenteEvent.emit(id_empleado);
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA MMANDAR LA INFORMACIÓN DEL ITEM SELECCIONADO
+  //============================================================================
+
+  @Output() btnBuscarMarcaId = new EventEmitter<number>();
+  getById (id_empleado: any) {
+    this.btnBuscarMarcaId.emit(id_empleado)
   }
 }

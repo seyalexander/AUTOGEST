@@ -6,7 +6,7 @@
           [mode]="'header'"
           [textButton]="item.name"
           [iconRigthButton]="'uil-angle-down'"
-        ></app-button-text-icon-sidebar>
+        />
         <div class="modal_submenu">
           <ul>
             <li *ngFor="let subItem of item.subOpciones">
@@ -15,7 +15,7 @@
                 [routerLink]="subItem.route"
                 [textButton]="subItem.name_sub"
                 [iconLeftButton]="subItem.icon_sub"
-              ></app-button-text-icon-sidebar>
+              />
             </li>
           </ul>
         </div>

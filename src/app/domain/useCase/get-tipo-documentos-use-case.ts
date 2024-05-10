@@ -17,4 +17,16 @@ export class GetTipoDocumentoUseCases {
     return this._tipoDocumentosGateWay.getAll();
   }
 
+  newTipoDocumento (tipoDocumento: tipoDocumentosModel) : Observable <object> {
+    return this._tipoDocumentosGateWay.newTipoDocumento(tipoDocumento);
+  }
+
+  getById (id: number) : Observable <tipoDocumentosModel> {
+    return this._tipoDocumentosGateWay.getById(id);
+  }
+
+  updateTipoDocumento (id_TipoDocumento: number, tipoDocumento: tipoDocumentosModel) : Observable <object> {
+    return this._tipoDocumentosGateWay.updateTipoDocumento(id_TipoDocumento, tipoDocumento)
+  }
+
 }

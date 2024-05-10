@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
+import { RegistrarOperacionPageComponent } from './components/pages/registrar-operacion-page/registrar-operacion-page.component';
 
-const routes: Routes = [];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class ProcessRoutingModule { }
+export const processRoutes: Routes = [
+  {
+    path: '',
+    component: RegistrarOperacionPageComponent
+  }
+];

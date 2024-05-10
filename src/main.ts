@@ -1,10 +1,6 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-
 import { importProvidersFrom } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { AppRoutingModule } from './app/app-routing.module';
 import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -28,11 +24,20 @@ import { MarcaAutosApiService } from './app/infraestrcuture/driven-adapter/marca
 import { marcaAutosGateway } from './app/domain/models/marcas-autos/gateway/marca-autos-gateway';
 import { ClientesApiService } from './app/infraestrcuture/driven-adapter/clientes/clientes-api.service';
 import { clientesGateway } from './app/domain/models/clientes/gateway/clientes-gateway';
+import { provideRouter } from '@angular/router';
+import { AppRoutes } from './app/app-routing.module';
+import { familiaProductosGateway } from './app/domain/models/familia-productos/gateway/familiaProductos-gateway';
+import { FamiliaProductosApiService } from './app/infraestrcuture/driven-adapter/familia-productos/familia-productos-api.service';
+import { productosGateway } from './app/domain/models/productos/gateway/productos-gateway';
+import { ProductosApiService } from './app/infraestrcuture/driven-adapter/productos/productos-api.service';
+import { choferesGateway } from './app/domain/models/choferes/gateway/choferes-gateway';
+import { ChoferesApiService } from './app/infraestrcuture/driven-adapter/choferes/choferes-api.service';
 
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, AppRoutingModule, NgxPaginationModule),
+      provideRouter(AppRoutes),
+        importProvidersFrom(BrowserModule, NgxPaginationModule),
         { provide: clientesGateway, useClass: ClientesApiService },
         { provide: marcaAutosGateway, useClass: MarcaAutosApiService },
         { provide: modeloAutosGateway, useClass: ModeloAutosApiService },
@@ -43,6 +48,9 @@ bootstrapApplication(AppComponent, {
         { provide: reparacionGateway, useClass: ReparacionApiService },
         { provide: rolUsuarioGateway, useClass: RolUsuarioApiService },
         { provide: usuariosGateway, useClass: UsuariosApiService },
+        { provide: familiaProductosGateway, useClass: FamiliaProductosApiService },
+        { provide: productosGateway, useClass: ProductosApiService },
+        { provide: choferesGateway, useClass: ChoferesApiService },
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         provideHttpClient(withInterceptorsFromDi())
     ]

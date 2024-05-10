@@ -1,12 +1,30 @@
 article {
   height: 100%;
-  padding: 12px 24px;
   box-sizing: border-box;
 }
 
+.modal-registro,
+.modal-update  {
+  width: 100%;
+  height: calc(100vh - 50px);
+  box-sizing: border-box;
+  position: absolute;
+  background-color: rgba(34, 34, 34, 0.3);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 24px;
+}
+
+
+header {
+  padding: 12px 24px 0 12px;
+}
 
 main {
   margin-top: 12px;
+  padding: 12px 24px;
 }
 
 .bg-container-body {
@@ -17,7 +35,7 @@ main {
 
 .container-body {
   width: auto;
-  max-height: 450px;
+  max-height: 400px;
   overflow-y: scroll;
   border-radius: 5px;
   border: 1px solid rgba(10, 180, 209, 0.3);
@@ -32,10 +50,14 @@ main {
 }
 
 .container-body::-webkit-scrollbar-thumb {
-  background-color: #0AB4D1;
+  background-color: rgba(10, 180, 209);
   border-radius: 4px;
 }
 
-.container-body::-webkit-scrollbar-thumb:hover {
+.container-body::-webkit-scrollbar-thumb {
   background-color: #1092a8;
+}
+
+.paginacion {
+  margin-top: 0.8rem;
 }

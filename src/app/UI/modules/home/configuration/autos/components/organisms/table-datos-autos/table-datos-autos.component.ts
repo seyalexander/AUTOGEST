@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { autosModel } from 'src/app/domain/models/autos/autos.model';
 import { OrderListAutosPipe } from '../../../../../../../shared/pipes/order/autos/order-list-autos.pipe';
 import { NgFor } from '@angular/common';
@@ -22,5 +22,23 @@ export class TableDatosAutosComponent {
       property,
       order: order == 'asc' ? 'desc' :'asc'
     }
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA EJECUTAR UNA FUNCIÓN DEL COMPONENTE HIJO AL PADRE
+  //============================================================================
+
+  @Output() cerrarUpdateComponenteEvent = new EventEmitter<void>();
+  cerrarUpdateComponente(id_Auto: any) {
+    this.cerrarUpdateComponenteEvent.emit(id_Auto);
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA MMANDAR LA INFORMACIÓN DEL ITEM SELECCIONADO
+  //============================================================================
+
+  @Output() btnBuscarMarcaId = new EventEmitter<number>();
+  getById (id_Auto: any) {
+    this.btnBuscarMarcaId.emit(id_Auto)
   }
 }

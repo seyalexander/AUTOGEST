@@ -4,12 +4,12 @@
       <th >
         <app-th-tables-icon-text
           [nombreTh]="'N°'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >
         <app-th-tables-icon-text
-          [nombreTh]="'Modelo'"
-        ></app-th-tables-icon-text>
+          [nombreTh]="'TIPO'"
+        />
       </th>
       <th >Editar</th>
       <th>Eliminar</th>
@@ -17,12 +17,12 @@
   </thead>
   <tbody>
 
-    <tr *ngFor=" let item of dataTipoDocumento | orderListTipoDocumento : optionSort.property : optionSort.order">
+    <tr *ngFor=" let item of dataTipoDocumento | orderListTipoDocumento : optionSort.property : optionSort.order; index as i">
 
-      <td scope="row">{{item.id_Tipo_Documento}}</td>
-      <td>{{item.tipo_Documento}}</td>
+      <td scope="row">{{i}}</td>
+      <td>{{item.tipo}}</td>
       <td>
-        <button class="btn-option-table btn-editar">
+        <button (click)="getById(item.id_Tipo_Documento)"  class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
         </button>
       </td>

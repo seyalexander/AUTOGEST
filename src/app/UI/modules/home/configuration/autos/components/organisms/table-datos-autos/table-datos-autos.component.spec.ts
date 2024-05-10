@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableDatosAutosComponent } from './table-datos-autos.component';
-import { SharedModule } from 'src/app/UI/shared/shared.module';
+
 
 describe('TableDatosAutosComponent', () => {
   let component: TableDatosAutosComponent;
@@ -9,7 +9,7 @@ describe('TableDatosAutosComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [SharedModule, TableDatosAutosComponent]
+    imports: [TableDatosAutosComponent]
 });
     fixture = TestBed.createComponent(TableDatosAutosComponent);
     component = fixture.componentInstance;

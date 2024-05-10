@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { tipoDocumentosModel } from 'src/app/domain/models/tipo-documentos/tipo-documentos.model';
 import { OrderListTipoDocumentoPipe } from '../../../../../../../shared/pipes/order/tipo-documento/order-list-tipo-documento.pipe';
 import { NgFor } from '@angular/common';
@@ -22,5 +22,23 @@ export class TablaDatosTipoDocumentosComponent {
       property,
       order: order == 'asc' ? 'desc' :'asc'
     }
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA EJECUTAR UNA FUNCIÓN DEL COMPONENTE HIJO AL PADRE
+  //============================================================================
+
+  @Output() cerrarUpdateComponenteEvent = new EventEmitter<void>();
+  cerrarUpdateComponente(id_tipoDocumento: any) {
+    this.cerrarUpdateComponenteEvent.emit(id_tipoDocumento);
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA MMANDAR LA INFORMACIÓN DEL ITEM SELECCIONADO
+  //============================================================================
+
+  @Output() btnBuscarMarcaId = new EventEmitter<number>();
+  getById (id_tipoDocumento: any) {
+    this.btnBuscarMarcaId.emit(id_tipoDocumento)
   }
 }

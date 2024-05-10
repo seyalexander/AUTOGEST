@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { reparacionModel } from 'src/app/domain/models/reparacion/reparacion.model';
 import { OrderListReparacionPipe } from '../../../../../../../shared/pipes/order/reparacion/order-list-reparacion.pipe';
 import { NgFor } from '@angular/common';
@@ -22,5 +22,23 @@ export class TableDatosReparacionComponent {
       property,
       order: order == 'asc' ? 'desc' :'asc'
     }
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA EJECUTAR UNA FUNCIÓN DEL COMPONENTE HIJO AL PADRE
+  //============================================================================
+
+  @Output() cerrarUpdateComponenteEvent = new EventEmitter<void>();
+  cerrarUpdateComponente(id_Reparacion: any) {
+    this.cerrarUpdateComponenteEvent.emit(id_Reparacion);
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA MMANDAR LA INFORMACIÓN DEL ITEM SELECCIONADO
+  //============================================================================
+
+  @Output() btnBuscarMarcaId = new EventEmitter<number>();
+  getById (id_Reparacion: any) {
+    this.btnBuscarMarcaId.emit(id_Reparacion)
   }
 }

@@ -16,4 +16,8 @@ export class GetOrdenTrabajoUseCases {
     return this._ordenTrabajoGateWay.getAll();
   }
 
+  newOrdenTrabajo(ordenTrabajo: ordenTrabajoModel): Observable<Object> {
+    return this._ordenTrabajoGateWay.newOrdenProducto(ordenTrabajo)
+  }
+
 }

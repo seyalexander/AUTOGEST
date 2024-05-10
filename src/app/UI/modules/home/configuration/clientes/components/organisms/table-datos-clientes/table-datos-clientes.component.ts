@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { clienteModel } from 'src/app/domain/models/clientes/clientes.model';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderListClientesPipe } from '../../../../../../../shared/pipes/order/clientes/order-list-clientes.pipe';
@@ -15,9 +15,11 @@ import { ThTablesIconTextComponent } from '../../../../../../../shared/component
     imports: [ThTablesIconTextComponent, NgIf, NgFor, LoadersTablesPagesComponent, MensajeTablaVaciaComponent, OrderListClientesPipe, NgxPaginationModule]
 })
 export class TableDatosClientesComponent {
+
   @Input() nombrePagina:  String = '';
   @Input() dataClientes:  Array<clienteModel> = [];
   @Input() isLoading : boolean = true;
+
   optionSort: {property:string|null, order:string} = {property:null, order: 'asc'}
 
   cambiarOrden (property:string):void {
@@ -32,4 +34,22 @@ export class TableDatosClientesComponent {
   @Input() cantidadPaginas: number = 1;
 
   collection: any[] = this.dataClientes;
+
+  //============================================================================
+  // FUNCIÓN PARA EJECUTAR UNA FUNCIÓN DEL COMPONENTE HIJO AL PADRE
+  //============================================================================
+
+  @Output() cerrarUpdateComponenteEvent = new EventEmitter<void>();
+  cerrarUpdateComponente(id_Clientes: any) {
+    this.cerrarUpdateComponenteEvent.emit(id_Clientes);
+  }
+
+  //============================================================================
+  // FUNCIÓN PARA MMANDAR LA INFORMACIÓN DEL ITEM SELECCIONADO
+  //============================================================================
+
+  @Output() btnBuscarMarcaId = new EventEmitter<number>();
+  getById (id_Clientes: any) {
+    this.btnBuscarMarcaId.emit(id_Clientes)
+  }
 }

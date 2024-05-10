@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConfigurationPageComponent } from './configuration-page.component';
-import { SharedModule } from 'src/app/UI/shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RouterOutlet } from '@angular/router';
 import { By } from '@angular/platform-browser';
@@ -13,7 +12,6 @@ describe('ConfigurationPageComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
     imports: [
-        SharedModule,
         RouterTestingModule,
         ConfigurationPageComponent
     ]

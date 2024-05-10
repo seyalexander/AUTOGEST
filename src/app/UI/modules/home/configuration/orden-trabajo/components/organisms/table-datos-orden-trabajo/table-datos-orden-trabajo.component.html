@@ -4,32 +4,32 @@
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'N°'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th>
         <app-th-tables-icon-text
-          [nombreTh]="'N° Orden'"
-        ></app-th-tables-icon-text>
+        [nombreTh]="'Cliente'"
+        />
       </th>
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'Descripción'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'A. Matrícula'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'Emp. Nombre'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'Emp. Ape.'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >Editar</th>
       <th>Eliminar</th>
@@ -39,14 +39,14 @@
 
     <tr *ngFor=" let item of dataOrdenTrabajo | orderListOrdenTrabajo : optionSort.property : optionSort.order">
 
-      <td scope="row">{{item.Id_Orden_Trabajo}}</td>
-      <td>{{ item.Numero_Orden }}</td>
-      <td>{{item.Descripcion_Problema}}</td>
-      <td>{{item.Id_Auto_Fk.Matricula}}</td>
-      <td>{{item.Id_Empleado_Fk.Nombres}}</td>
-      <td>{{item.Id_Empleado_Fk.Apellidos}}</td>
+      <td scope="row">{{item.id_Orden_Ingreso}}</td>
+      <td>{{ item.id_Auto_Fk.idClienteFk.razon_Social }}</td>
+      <td>{{item.descripcion_Problema}}</td>
+      <td>{{item.id_Auto_Fk.matricula}}</td>
+      <td>{{item.id_Empleado_Fk.nombres}}</td>
+      <td>{{item.id_Empleado_Fk.apellidos}}</td>
       <td>
-        <button class="btn-option-table btn-editar">
+        <button (click)="getById(item.id_Orden_Ingreso)"  class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
         </button>
       </td>

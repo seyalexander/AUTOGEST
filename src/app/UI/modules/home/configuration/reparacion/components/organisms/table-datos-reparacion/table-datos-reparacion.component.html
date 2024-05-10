@@ -4,32 +4,22 @@
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'N°'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th>
         <app-th-tables-icon-text
-          [nombreTh]="'OT. N° Orden'"
-        ></app-th-tables-icon-text>
+          [nombreTh]="'Producto'"
+        />
       </th>
       <th>
         <app-th-tables-icon-text
-          [nombreTh]="'OT. Desc.n'"
-        ></app-th-tables-icon-text>
+          [nombreTh]="'Precio prod.'"
+        />
       </th>
       <th>
         <app-th-tables-icon-text
-          [nombreTh]="'F. entrega'"
-        ></app-th-tables-icon-text>
-      </th>
-      <th>
-        <app-th-tables-icon-text
-          [nombreTh]="'Descripción'"
-        ></app-th-tables-icon-text>
-      </th>
-      <th>
-        <app-th-tables-icon-text
-          [nombreTh]="'Costo'"
-        ></app-th-tables-icon-text>
+          [nombreTh]="'Precio prod.'"
+        />
       </th>
       <th >Editar</th>
       <th>Eliminar</th>
@@ -39,14 +29,13 @@
 
     <tr *ngFor=" let item of dataReparacion | orderListReparacion : optionSort.property : optionSort.order">
 
-      <td scope="row">{{item.Id_Reparacion}}</td>
-      <td>{{ item.Id_Orden_Trabajo_Fk.Numero_Orden }}</td>
-      <td>{{ item.Id_Orden_Trabajo_Fk.Descripcion_Problema }}</td>
-      <td>{{item.Fecha_Entrega}}</td>
-      <td>{{item.Descripcion_Reparacion}}</td>
-      <td>S/ {{item.Costo_Reparacion}}</td>
+      <td scope="row">{{item.id_Detalle_Servicio}}</td>
+      <td>{{item.detalle_Servicio}}</td>
+      <td>{{item.id_Producto_Fk.nombre}}</td>
+      <td>{{item.precio_Producto}}</td>
+
       <td>
-        <button class="btn-option-table btn-editar">
+        <button (click)="getById(item.id_Detalle_Servicio)" class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
         </button>
       </td>

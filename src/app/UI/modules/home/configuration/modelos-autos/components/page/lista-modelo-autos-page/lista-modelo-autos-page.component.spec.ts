@@ -1,3 +1,5 @@
+
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListaModeloAutosPageComponent } from './lista-modelo-autos-page.component';
@@ -5,7 +7,7 @@ import { modeloAutosGateway } from 'src/app/domain/models/modelo-autos/gateway/m
 import { ModeloAutosApiService } from 'src/app/infraestrcuture/driven-adapter/modelo-autos/modelo-autos-api.service';
 import { TablaDatosModelosAutosComponent } from '../../organisms/tabla-datos-modelos-autos/tabla-datos-modelos-autos.component';
 import { RegistroDatosModeloAutosPageComponent } from '../registro-datos-modelo-autos-page/registro-datos-modelo-autos-page.component';
-import { SharedModule } from 'src/app/UI/shared/shared.module';
+
 
 describe('ListaModeloAutosPageComponent', () => {
   let component: ListaModeloAutosPageComponent;
@@ -14,7 +16,6 @@ describe('ListaModeloAutosPageComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
     imports: [
-        SharedModule,
         ListaModeloAutosPageComponent,
         TablaDatosModelosAutosComponent,
         RegistroDatosModeloAutosPageComponent

@@ -19,6 +19,14 @@ export class ClientesApiService extends clientesGateway {
     return this.httpClient.get<clienteModel[]>(`${this.URL}/MostrarCliente`);
   }
 
+  override getById(id: number): Observable<clienteModel> {
+    return this.httpClient.get<clienteModel>(`${this.URL}/BuscarCliente/${id}`)
+  }
+
+  override updatClientes(id_Cliente: number, cliente: clienteModel): Observable<Object> {
+    return this.httpClient.put(`${this.URL}/ActualizarClientes/${id_Cliente}`, cliente)
+  }
+
   private URL = environment.api;
 
   constructor(private httpClient: HttpClient) {

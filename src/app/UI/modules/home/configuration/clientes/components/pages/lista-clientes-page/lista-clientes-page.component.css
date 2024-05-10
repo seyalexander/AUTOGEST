@@ -5,7 +5,7 @@ article {
 
 .modal-registro {
   width: 100%;
-  height: calc(100vh - 74px);
+  height: calc(100vh - 50px);
   box-sizing: border-box;
   position: absolute;
   background-color: rgba(34, 34, 34, 0.3);

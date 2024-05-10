@@ -1,13 +1,13 @@
 <article>
   <aside>
     <div class="menu-descktop">
-      <app-aside></app-aside>
+      <app-aside />
     </div>
-    <app-header-movil-home (abrirComponenteEvent)="mostrarComponente()"></app-header-movil-home>
+    <app-header-movil-home (abrirComponenteEvent)="mostrarComponente()" />
   </aside>
 
   <div class="menu-movil" *ngIf="showMenu">
-    <app-aside (abrirComponenteEvent)="mostrarComponente()"></app-aside>
+    <app-aside (abrirComponenteEvent)="mostrarComponente()" />
   </div>
 
   <main>

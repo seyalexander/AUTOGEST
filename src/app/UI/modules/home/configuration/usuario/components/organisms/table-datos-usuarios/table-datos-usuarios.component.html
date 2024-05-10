@@ -4,32 +4,32 @@
       <th >
         <app-th-tables-icon-text
           [nombreTh]="'N°'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >
         <app-th-tables-icon-text
           [nombreTh]="'Usuario'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >
         <app-th-tables-icon-text
           [nombreTh]="'Contraseña'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >
         <app-th-tables-icon-text
           [nombreTh]="'Rol'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >
         <app-th-tables-icon-text
           [nombreTh]="'E. Nombre'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >
         <app-th-tables-icon-text
           [nombreTh]="'E. Apellido'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >Editar</th>
       <th>Eliminar</th>
@@ -43,8 +43,8 @@
       <td>{{item.Usuario}}</td>
       <td>{{item.Clave}}</td>
       <td>{{item.Id_Rol_Usuario_Fk.Descripcion_Rol}}</td>
-      <td>{{item.Id_Empleado_Fk.Nombres}}</td>
-      <td>{{item.Id_Empleado_Fk.Apellidos}}</td>
+      <td>{{item.Id_Empleado_Fk.nombres}}</td>
+      <td>{{item.Id_Empleado_Fk.apellidos}}</td>
       <td>
         <button class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>

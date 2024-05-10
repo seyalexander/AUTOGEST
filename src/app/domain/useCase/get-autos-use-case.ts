@@ -14,7 +14,18 @@ export class GetAutosUseCases {
   constructor( private _autosGateWay: autosGateway) {}
 
   getAllAutos () : Observable <Array<autosModel>> {
-    return this._autosGateWay.getAll();
+    return this._autosGateWay.getAllAutos();
   }
 
+  newAuto (autos: autosModel) : Observable <object> {
+    return this._autosGateWay.newAutos(autos);
+  }
+
+  getById (id: number): Observable <autosModel> {
+    return this._autosGateWay.getById(id);
+  }
+
+  updateAutos (id_Autos: number, autos: autosModel) : Observable <object> {
+    return this._autosGateWay.updatAuto(id_Autos, autos)
+  }
 }

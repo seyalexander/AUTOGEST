@@ -50,7 +50,9 @@ export class RegistroDatosClientesPageComponent {
     private _getClientesUseCase: GetClientesUseCases,
     private router: Router,
   ) { }
-
+  //================================================================
+  // FUNCIÓN PRICIPAL Y VALIDACIONES DE CAMPOS
+  //================================================================
   ngOnInit(): void {
     this.formularioRegistro = new FormGroup({
       ruc: new FormControl('', [
@@ -83,6 +85,10 @@ export class RegistroDatosClientesPageComponent {
       ]),
     });
   }
+
+  //================================================================
+  // VALIDACIÓN DE CADA CAMPO
+  //================================================================
 
   onlyLetrasValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value;
@@ -122,6 +128,10 @@ export class RegistroDatosClientesPageComponent {
     return null;
   }
 
+  //================================================================
+  // FUNCIÓN PARA GUARDAR
+  //================================================================
+
   public sendClientes(): void {
     this._getClientesUseCase
       .newCliente(this.Clientes)
@@ -131,6 +141,9 @@ export class RegistroDatosClientesPageComponent {
       });
   }
 
+  //================================================================
+  // SWEETALERT
+  //================================================================
   mensajeValidacionRegistroCorrecto(response: any) {
     const message = response && response.message ? response.message : 'Cliente creado correctamente.';
     Swal.fire(`${this.tituloSwalCorrecto}`, message, 'success').then(() => {

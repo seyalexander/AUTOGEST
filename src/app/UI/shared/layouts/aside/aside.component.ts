@@ -40,12 +40,12 @@ export class AsideComponent {
       {
         name: ['Reportes'],
         icon: 'uil uil-document-info',
-        route: ['/', '']
+        route: ['/', '','']
       },
       {
         name: ['Operaciones'],
         icon: 'uil uil-document-info',
-        route: ['/', '']
+        route: ['/', 'operacion']
       },
     ]
   }

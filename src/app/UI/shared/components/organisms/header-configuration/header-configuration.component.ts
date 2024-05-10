@@ -46,12 +46,12 @@ export class HeaderConfigurationComponent {
           //   route: ['/', 'empresas']
           // },
           {
-            name_sub: 'Orden Trabajo',
+            name_sub: 'Orden Ingreso',
             icon_sub: 'uil uil-document-info',
             route: ['/', 'configuracion', 'orden-trabajo']
           },
           {
-            name_sub: 'Reparacion',
+            name_sub: 'Servicio realizado',
             icon_sub: 'uil uil-document-info',
             route: ['/', 'configuracion', 'reparacion']
           },
@@ -74,39 +74,24 @@ export class HeaderConfigurationComponent {
 
       },
       {
-        name: 'Avanzada',
+        name: 'Productos',
         icon: 'uil uil-document-info',
         subOpciones: [
           {
-            name_sub: 'Diferenciadores',
-            icon_sub: 'uil uil-document-info',
-            route: ['/', 'empresas']
+            name_sub: 'Familia productos',
+            icon_sub: 'uil uil-car',
+            route: ['/','configuracion','familia-productos']
           },
-          // {
-          //   name_sub: 'Sub Diferenciadores',
-          //   icon_sub: 'uil uil-document-info',
-          //   route: ['/', 'empresas']
-          // },
-          // {
-          //   name_sub: ' Sub Clasificadores',
-          //   icon_sub: 'uil uil-document-info',
-          //   route: ['/', 'empresas']
-          // },
-          // {
-          //   name_sub: ' Sub Modificadores',
-          //   icon_sub: 'uil uil-document-info',
-          //   route: ['/', 'empresas']
-          // },
-          // {
-          //   name_sub: 'Packs',
-          //   icon_sub: 'uil uil-document-info',
-          //   route: ['/', 'empresas']
-          // }
+          {
+            name_sub: 'Productos',
+            icon_sub: 'uil uil-car',
+            route: ['/','configuracion','productos']
+          },
         ],
 
       },
       {
-        name: 'Utilidades',
+        name: 'Autos',
         icon: 'uil uil-document-info',
         subOpciones: [
           {
@@ -124,6 +109,7 @@ export class HeaderConfigurationComponent {
             icon_sub: 'uil uil-car',
             route: ['/','configuracion','autos']
           },
+
         ],
 
       },
@@ -140,6 +126,11 @@ export class HeaderConfigurationComponent {
             name_sub: 'Tipo documentos',
             icon_sub: 'uil uil-user',
             route: ['/','configuracion','tipo-documentos']
+          },
+          {
+            name_sub: 'Choferes',
+            icon_sub: 'uil uil-user',
+            route: ['/','configuracion','choferes']
           },
         ],
 

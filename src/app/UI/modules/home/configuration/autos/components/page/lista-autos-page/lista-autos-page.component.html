@@ -1,11 +1,17 @@
 <article>
+  <div class="modal-registro" *ngIf="showRegistro">
+    <app-registro-datos-autos-page
+      (cerrarComponenteEvent)="mostrarComponente()"
+    />
+  </div>
   <header>
-    <app-header-pages-configuration [nombrePagina]="nombrePagina"></app-header-pages-configuration>
+    <app-header-pages-configuration [nombrePagina]="nombrePagina"
+    (cerrarComponenteEvent)="mostrarComponente()"/>
   </header>
   <main>
     <div class="bg-container-body">
       <div class="container-body">
-        <app-table-datos-autos [dataAutos]="datosAutoslista"></app-table-datos-autos>
+        <app-table-datos-autos [dataAutos]="datosAutoslista"/>
       </div>
     </div>
   </main>

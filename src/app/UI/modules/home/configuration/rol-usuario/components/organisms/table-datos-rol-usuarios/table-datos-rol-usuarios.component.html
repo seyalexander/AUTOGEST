@@ -4,12 +4,12 @@
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'N°'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th>
         <app-th-tables-icon-text
           [nombreTh]="'Descripción'"
-        ></app-th-tables-icon-text>
+        />
       </th>
       <th >Editar</th>
       <th>Eliminar</th>
@@ -22,7 +22,7 @@
       <td scope="row">{{item.Id_Rol_Usuario}}</td>
       <td>{{item.Descripcion_Rol}}</td>
       <td>
-        <button class="btn-option-table btn-editar">
+        <button (click)="getById(item.Id_Rol_Usuario)" class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
         </button>
       </td>

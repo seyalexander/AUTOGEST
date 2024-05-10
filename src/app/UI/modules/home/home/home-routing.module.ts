@@ -1,24 +1,28 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {  Routes } from '@angular/router';
+import { authGuard } from 'src/app/infraestrcuture/core/guards/login/auth.guard';
+import { authorizationGuard } from 'src/app/infraestrcuture/core/guards/login/authorization.guard';
 
-const routes: Routes = [
+export const homeRoutes: Routes = [
   {
     path: '',
-    loadChildren: () => import ('../dashboard/dashboard.module').then(m=>m.DashboardModule)
+    loadChildren: () => import ('../dashboard/dashboard-routing.module').then(m=>m.dashboardRoutes),
+    // canActivate: [authGuard, authorizationGuard]
   },
   {
     path: 'configuracion',
-    loadChildren: () => import ('../configuration/configuration/configuration.module').then(m=>m.ConfigurationModule)
+    loadChildren: () => import ('../configuration/configuration/configuration-routing.module').then(m=>m.configuracionRoutes),
+    // canActivate: [authGuard, authorizationGuard]
+  },
+  {
+    path: 'operacion',
+    loadChildren: () => import ('../process/process-routing.module').then(m=>m.processRoutes),
+    // canActivate: [authGuard, authorizationGuard]
   },
   {
     path: '**',
-    loadChildren: () => import ('../dashboard/dashboard.module').then(m=>m.DashboardModule),
+    loadChildren: () => import ('../dashboard/dashboard-routing.module').then(m=>m.dashboardRoutes),
     redirectTo: ''
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class HomeRoutingModule { }
+

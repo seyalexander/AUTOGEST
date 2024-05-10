@@ -31,11 +31,11 @@
             />
             <div class="validacion-input" *ngIf="formularioRegistro.get('ruc')?.hasError('onlyNumbers')">
               <div class="triangle"></div>
-              <app-mensaje-datos-incorrectos [mensajeError]="mensajeTipoDeCaracteres"></app-mensaje-datos-incorrectos>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeTipoDeCaracteres"/>
             </div>
             <div class="validacion-input" *ngIf="formularioRegistro.get('ruc')?.hasError('maxLengthExceeded')">
               <div class="triangle"></div>
-              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRuc"></app-mensaje-datos-incorrectos>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRuc"/>
             </div>
           </div>
 
@@ -55,7 +55,7 @@
             />
             <div class="validacion-input" *ngIf="formularioRegistro.get('razonSocial')?.hasError('maxLengthExceeded')">
               <div class="triangle"></div>
-              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRazonSocial"></app-mensaje-datos-incorrectos>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRazonSocial"/>
             </div>
           </div>
 
@@ -75,7 +75,7 @@
             />
             <div class="validacion-input" *ngIf="formularioRegistro.get('representante_Legal')?.hasError('maxLengthExceeded')">
               <div class="triangle"></div>
-              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRepresetnmanteLegal"></app-mensaje-datos-incorrectos>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresRepresetnmanteLegal"/>
             </div>
           </div>
 
@@ -95,11 +95,11 @@
             />
             <div class="validacion-input" *ngIf="formularioRegistro.get('telefono')?.hasError('onlyNumbers')">
               <div class="triangle"></div>
-              <app-mensaje-datos-incorrectos [mensajeError]="mensajeTipoDeCaracteres"></app-mensaje-datos-incorrectos>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeTipoDeCaracteres" />
             </div>
             <div class="validacion-input" *ngIf="formularioRegistro.get('telefono')?.hasError('maxLengthExceeded')">
               <div class="triangle"></div>
-              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresTelefono"></app-mensaje-datos-incorrectos>
+              <app-mensaje-datos-incorrectos [mensajeError]="mensajeCantidadCaracteresTelefono" />
             </div>
           </div>
 

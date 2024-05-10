@@ -17,4 +17,16 @@ export class GetRolUsuarioUseCases {
     return this._rolUsuarioGateWay.getAll();
   }
 
+  newRolUsuarios(roles: rolUsuarioModel): Observable<Object> {
+    return this._rolUsuarioGateWay.newRol(roles)
+  }
+
+  getById(id: number): Observable<rolUsuarioModel> {
+    return this._rolUsuarioGateWay.getById(id)
+  }
+
+  updateProductos(id: number, roles: rolUsuarioModel): Observable<Object> {
+    return this._rolUsuarioGateWay.updateRol(id, roles)
+  }
+
 }

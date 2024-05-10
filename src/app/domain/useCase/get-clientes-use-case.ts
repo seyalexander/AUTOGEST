@@ -22,4 +22,12 @@ export class GetClientesUseCases {
     return this._clientesGateWay.newCliente(cliente);
   }
 
+  getById (id: number): Observable <clienteModel> {
+    return this._clientesGateWay.getById(id);
+  }
+
+  updateClientes (id_Clientes: number, clientes: clienteModel) : Observable <object> {
+    return this._clientesGateWay.updatClientes(id_Clientes, clientes)
+  }
+
 }

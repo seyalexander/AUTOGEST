@@ -1,4 +1,4 @@
 export class marcaAutosModel {
-  id_Marca: String | number = '';
-  nombre_Marca: String = '';
+  id_Marca: number = 0;
+  marca: String = '';
 }

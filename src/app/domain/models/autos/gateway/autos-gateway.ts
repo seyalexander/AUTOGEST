@@ -3,5 +3,8 @@ import { autosModel } from "../autos.model";
 
 
 export abstract class autosGateway {
-  abstract getAll(): Observable<Array<autosModel>>;
+  abstract getAllAutos(): Observable<Array<autosModel>>;
+  abstract newAutos(autos: autosModel): Observable<Object>;
+  abstract getById(id: number): Observable<autosModel>;
+  abstract updatAuto(id_Auto: number, auto: autosModel): Observable<Object>;
 }
