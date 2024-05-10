@@ -5,11 +5,9 @@
     </div>
     <app-header-movil-home (abrirComponenteEvent)="mostrarComponente()" />
   </aside>
-
   <div class="menu-movil" *ngIf="showMenu">
     <app-aside (abrirComponenteEvent)="mostrarComponente()" />
   </div>
-
   <main>
     <router-outlet></router-outlet>
   </main>
