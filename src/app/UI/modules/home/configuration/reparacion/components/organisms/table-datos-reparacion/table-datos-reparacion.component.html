@@ -8,17 +8,7 @@
       </th>
       <th>
         <app-th-tables-icon-text
-          [nombreTh]="'Producto'"
-        />
-      </th>
-      <th>
-        <app-th-tables-icon-text
-          [nombreTh]="'Precio prod.'"
-        />
-      </th>
-      <th>
-        <app-th-tables-icon-text
-          [nombreTh]="'Precio prod.'"
+          [nombreTh]="'Cliente'"
         />
       </th>
       <th >Editar</th>
@@ -27,15 +17,12 @@
   </thead>
   <tbody>
 
-    <tr *ngFor=" let item of dataReparacion | orderListReparacion : optionSort.property : optionSort.order">
+    <tr *ngFor=" let item of dataReparacion | orderListReparacion : optionSort.property : optionSort.order; index as i">
 
-      <td scope="row">{{item.id_Detalle_Servicio}}</td>
-      <td>{{item.detalle_Servicio}}</td>
-      <td>{{item.id_Producto_Fk.nombre}}</td>
-      <td>{{item.precio_Producto}}</td>
-
+      <td scope="row">{{i}}</td>
+      <td scope="row">{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
       <td>
-        <button (click)="getById(item.id_Detalle_Servicio)" class="btn-option-table btn-editar">
+        <button (click)="getById(item.id_Servicio)" class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
         </button>
       </td>

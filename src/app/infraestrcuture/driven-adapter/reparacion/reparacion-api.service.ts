@@ -19,7 +19,7 @@ export class ReparacionApiService extends reparacionGateway {
   private URL = environment.api;
 
   override getAll(): Observable<reparacionModel[]> {
-    return this.httpClient.get<reparacionModel[]>(`${this.URL}/MostrarDetalleSericio`)
+    return this.httpClient.get<reparacionModel[]>(`${this.URL}/MostrarServicioRealizado`)
   }
 
   override newReparacion(reparacion: reparacionModel): Observable<Object> {
