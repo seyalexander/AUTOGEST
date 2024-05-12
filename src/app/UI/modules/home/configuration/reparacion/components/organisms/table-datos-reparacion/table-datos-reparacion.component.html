@@ -11,6 +11,11 @@
           [nombreTh]="'Cliente'"
         />
       </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Empleados'"
+        />
+      </th>
       <th >Editar</th>
       <th>Eliminar</th>
     </tr>
@@ -20,7 +25,8 @@
     <tr *ngFor=" let item of dataReparacion | orderListReparacion : optionSort.property : optionSort.order; index as i">
 
       <td scope="row">{{i}}</td>
-      <td scope="row">{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
+      <td>{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
+      <td *ngFor="let empleados of item.detalleEmpleadoServicios">{{empleados.nombres}}{{empleados.apellidos}}</td>
       <td>
         <button (click)="getById(item.id_Servicio)" class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>

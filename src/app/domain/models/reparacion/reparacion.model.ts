@@ -6,8 +6,8 @@ import { ordenTrabajoModel } from "../orden-trabajo/orden-trabajo.model";
 import { productosModel } from "../productos/productos.model";
 
 export class reparacionModel {
-  detalleServicios: Array<detalleServicioModel> = [];
   detalleEmpleadoServicios: Array<empleadoModel> = [];
+  detalleServicios: Array<detalleServicioModel> = [];
   id_Servicio: number = 0;
   detalle_Servicio: String = '';
   costo_Producto_Total: number = 0.0
