@@ -41,14 +41,21 @@
 
       <td scope="row">{{i}}</td>
       <td>{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
-      <td *ngFor="let empleado of item.listaEmpleado" class="empleado-item">
-        <h4>{{empleado.id_Empleado_Fk.nombres}} {{empleado.id_Empleado_Fk.apellidos}}</h4>
+      <td>
+        <div *ngFor="let empleado of item.listaEmpleado" class="empleado-item">
+          <h4>- {{empleado.id_Empleado_Fk.nombres}} {{empleado.id_Empleado_Fk.apellidos}}</h4>
+        </div>
+
       </td>
-      <td *ngFor="let servicio of item.listaServicio" class="servicio-item">
-        <h4>{{servicio.detalle_Servicio}}</h4>
+      <td>
+        <div *ngFor="let servicio of item.listaServicio" class="servicio-item">
+          <h4>- {{servicio.detalle_Servicio}}</h4>
+        </div>
       </td>
-      <td *ngFor="let producto of item.listaServicio" class="producto-item">
-        <h4>{{producto.id_Producto_Fk.nombre}}</h4>
+      <td>
+        <div *ngFor="let producto of item.listaServicio" class="producto-item">
+          <h4>- {{producto.id_Producto_Fk.nombre}}</h4>
+        </div>
       </td>
       <td>S/{{item.costo_Total}}</td>
       <td>
