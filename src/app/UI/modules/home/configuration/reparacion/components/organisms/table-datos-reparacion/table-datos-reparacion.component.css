@@ -55,6 +55,11 @@ td:last-child {
   text-align: center;
 }
 
+.empleado-item{
+  display: flex;
+  flex-direction: column;
+}
+
 tbody tr:hover {
   background-color: rgba(10, 180, 209, 0.09);
   transition: all 0.3s ease;

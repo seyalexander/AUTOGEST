@@ -16,6 +16,21 @@
           [nombreTh]="'Empleados'"
         />
       </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Servicios'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Producto'"
+        />
+      </th>
+      <th>
+        <app-th-tables-icon-text
+          [nombreTh]="'Precio total'"
+        />
+      </th>
       <th >Editar</th>
       <th>Eliminar</th>
     </tr>
@@ -26,7 +41,16 @@
 
       <td scope="row">{{i}}</td>
       <td>{{item.id_Orden_Ingreso_Fk.id_Auto_Fk.idClienteFk.razon_Social}}</td>
-      <td *ngFor="let empleados of item.detalleEmpleadoServicios">{{empleados.nombres}}{{empleados.apellidos}}</td>
+      <td *ngFor="let empleado of item.listaEmpleado" class="empleado-item">
+        <h4>{{empleado.id_Empleado_Fk.nombres}} {{empleado.id_Empleado_Fk.apellidos}}</h4>
+      </td>
+      <td *ngFor="let servicio of item.listaServicio">
+        <h4>{{servicio.detalle_Servicio}}</h4>
+      </td>
+      <td *ngFor="let producto of item.listaServicio">
+        <h4>{{producto.id_Producto_Fk.nombre}}</h4>
+      </td>
+      <td>S/{{item.costo_Total}}</td>
       <td>
         <button (click)="getById(item.id_Servicio)" class="btn-option-table btn-editar">
           <i class="uil uil-pen"></i>
