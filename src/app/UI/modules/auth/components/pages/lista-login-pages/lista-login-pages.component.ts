@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from 'src/app/infraestrcuture/driven-adapter/login/auth.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -21,11 +22,13 @@ export class ListaLoginPagesComponent {
     private authService: AuthService,
   private router: Router) {}
 
+  url = environment.api
+
   login(): void {
     this.authService.login(this.username, this.password).subscribe(
       data => {
         console.log('Login successful', data);
-        this.router.navigate([`dashboard`]);
+        this.router.navigate([`/dashboard`]);
       },
       error => {
         console.error('Login failed', error);

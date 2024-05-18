@@ -4,7 +4,7 @@ import { authorizationGuard } from 'src/app/infraestrcuture/core/guards/login/au
 
 export const homeRoutes: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     loadChildren: () => import ('../dashboard/dashboard-routing.module').then(m=>m.dashboardRoutes),
     // canActivate: [authGuard, authorizationGuard]
   },

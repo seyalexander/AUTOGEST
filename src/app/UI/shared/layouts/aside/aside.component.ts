@@ -27,7 +27,7 @@ export class AsideComponent {
       {
         name: 'Dashboard',
         icon: 'uil uil-estate',
-        route: ['/'],
+        route: ['/dashboard'],
       },
     ];
 
