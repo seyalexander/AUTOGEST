@@ -3,7 +3,7 @@ import { DashboardPageComponent } from './components/page/dashboard-page/dashboa
 
 export const dashboardRoutes: Routes = [
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardPageComponent
   }
 ];

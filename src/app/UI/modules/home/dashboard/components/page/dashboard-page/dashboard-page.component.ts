@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { GetAutosUseCases } from 'src/app/domain/useCase/get-autos-use-case';
 import { autosModel } from 'src/app/domain/models/autos/autos.model';
+import { AuthService } from 'src/app/infraestrcuture/driven-adapter/login/auth.service';
 
 @Component({
     selector: 'app-dashboard-page',
@@ -23,14 +24,24 @@ export class DashboardPageComponent {
   cantidadClientes: number = 3
   cantidadAutos: number = 3
 
+  userLoginOn:boolean=false;
+
   constructor(
     private _getClientesUseCase: GetClientesUseCases,
-    private _getAutosUseCase: GetAutosUseCases
+    private _getAutosUseCase: GetAutosUseCases,
+    private loginService: AuthService
   ){}
 
+
   ngOnInit(): void {
-    this.obtenerClientesExito();
-    this.obtenerAutosExito();
+    this.loginService.currentUserLoginOn.subscribe({
+      next:(userLoginOn) => {
+        this.userLoginOn=userLoginOn;
+        this.obtenerClientesExito();
+        this.obtenerAutosExito();
+      }
+    });
+
   }
 
   //================================================================
@@ -54,6 +65,10 @@ export class DashboardPageComponent {
         this.cantidadAutos = Response.length
       })
   }
+
+  //================================================================
+  // Destruir susbcriptiones
+  //================================================================
 
   private clientesSubscription: Subscription | undefined;
   private autosSubscription: Subscription | undefined;

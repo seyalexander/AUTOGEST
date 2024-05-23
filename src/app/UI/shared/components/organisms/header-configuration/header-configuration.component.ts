@@ -28,7 +28,7 @@ export class HeaderConfigurationComponent {
           {
             name_sub: 'Empresa',
             icon_sub: 'uil uil-document-info',
-            route: ['/', 'configuracion', 'empresa']
+            route: ['/', 'home', 'empresa']
           },
           // {
           //   name_sub: 'Divisas',
@@ -48,27 +48,27 @@ export class HeaderConfigurationComponent {
           {
             name_sub: 'Orden Ingreso',
             icon_sub: 'uil uil-document-info',
-            route: ['/', 'configuracion', 'orden-trabajo']
+            route: ['/','home', 'configuracion', 'orden-trabajo']
           },
           {
             name_sub: 'Servicio realizado',
             icon_sub: 'uil uil-document-info',
-            route: ['/', 'configuracion', 'reparacion']
+            route: ['/','home', 'configuracion', 'reparacion']
           },
           {
             name_sub: 'Empleados',
             icon_sub: 'uil uil-document-info',
-            route: ['/', 'configuracion', 'empleados']
+            route: ['/', 'home','configuracion', 'empleados']
           },
           {
             name_sub: 'Roles usuarios',
             icon_sub: 'uil uil-document-info',
-            route: ['/','configuracion', 'rol-usuarios']
+            route: ['/','home','configuracion', 'rol-usuarios']
           },
           {
             name_sub: 'Usuarios',
             icon_sub: 'uil uil-document-info',
-            route: ['/','configuracion', 'usuarios']
+            route: ['/','home','configuracion', 'usuarios']
           },
         ],
 
@@ -80,12 +80,12 @@ export class HeaderConfigurationComponent {
           {
             name_sub: 'Familia productos',
             icon_sub: 'uil uil-car',
-            route: ['/','configuracion','familia-productos']
+            route: ['/','home','configuracion','familia-productos']
           },
           {
             name_sub: 'Productos',
             icon_sub: 'uil uil-car',
-            route: ['/','configuracion','productos']
+            route: ['/','home','configuracion','productos']
           },
         ],
 
@@ -97,17 +97,17 @@ export class HeaderConfigurationComponent {
           {
             name_sub: 'Marca Autos',
             icon_sub: 'uil uil-car',
-            route: ['/','configuracion','marca-autos']
+            route: ['/','home','configuracion','marca-autos']
           },
           {
             name_sub: 'Modelo Autos',
             icon_sub: 'uil uil-car',
-            route: ['/','configuracion','modelo-autos']
+            route: ['/','home','configuracion','modelo-autos']
           },
           {
             name_sub: 'Autos',
             icon_sub: 'uil uil-car',
-            route: ['/','configuracion','autos']
+            route: ['/','home','configuracion','autos']
           },
 
         ],
@@ -120,17 +120,17 @@ export class HeaderConfigurationComponent {
           {
             name_sub: 'Clientes',
             icon_sub: 'uil uil-user',
-            route: ['/','configuracion','MostrarCliente']
+            route: ['/','home','configuracion','MostrarCliente']
           },
           {
             name_sub: 'Tipo documentos',
             icon_sub: 'uil uil-user',
-            route: ['/','configuracion','tipo-documentos']
+            route: ['/','home','configuracion','tipo-documentos']
           },
           {
             name_sub: 'Choferes',
             icon_sub: 'uil uil-user',
-            route: ['/','configuracion','choferes']
+            route: ['/','home','choferes']
           },
         ],
 

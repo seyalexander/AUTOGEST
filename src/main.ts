@@ -1,7 +1,7 @@
 import { importProvidersFrom } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
+import { withInterceptorsFromDi, provideHttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { UsuariosApiService } from './app/infraestrcuture/driven-adapter/usuarios/usuarios-api.service';
@@ -32,11 +32,15 @@ import { productosGateway } from './app/domain/models/productos/gateway/producto
 import { ProductosApiService } from './app/infraestrcuture/driven-adapter/productos/productos-api.service';
 import { choferesGateway } from './app/domain/models/choferes/gateway/choferes-gateway';
 import { ChoferesApiService } from './app/infraestrcuture/driven-adapter/choferes/choferes-api.service';
+import { AuthService } from './app/infraestrcuture/driven-adapter/login/auth.service';
+import { ErrorInterceptorService } from './app/infraestrcuture/driven-adapter/login/error-interceptor.service';
+import { ClienteInterceptorService } from './app/infraestrcuture/core/interceptores/cliente-interceptor.service';
 
 
 bootstrapApplication(AppComponent, {
     providers: [
       provideRouter(AppRoutes),
+        HttpClientModule,
         importProvidersFrom(BrowserModule, NgxPaginationModule),
         { provide: clientesGateway, useClass: ClientesApiService },
         { provide: marcaAutosGateway, useClass: MarcaAutosApiService },
@@ -52,6 +56,8 @@ bootstrapApplication(AppComponent, {
         { provide: productosGateway, useClass: ProductosApiService },
         { provide: choferesGateway, useClass: ChoferesApiService },
         { provide: LocationStrategy, useClass: HashLocationStrategy },
+        {provide:HTTP_INTERCEPTORS,useClass:ClienteInterceptorService,multi:true},
+        {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptorService,multi:true},
         provideHttpClient(withInterceptorsFromDi())
     ]
 })

@@ -7,11 +7,19 @@ import { TableDatosChoferesComponent } from '../../organisms/table-datos-chofere
 import { TableDatosClientesComponent } from '../../../../clientes/components/organisms/table-datos-clientes/table-datos-clientes.component';
 import { HeaderPagesConfigurationComponent } from 'src/app/UI/shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
 import { RegistroDatosClientesPageComponent } from '../../../../clientes/components/pages/registro-datos-clientes-page/RegistroDatosClientesPageComponent';
+import { HeaderConfigurationComponent } from 'src/app/UI/shared/components/organisms/header-configuration/header-configuration.component';
 
 @Component({
   selector: 'app-lista-choferes-page',
   standalone: true,
-  imports: [RegistroDatosClientesPageComponent, HeaderPagesConfigurationComponent, TableDatosClientesComponent, CommonModule, TableDatosChoferesComponent],
+  imports: [
+    RegistroDatosClientesPageComponent,
+    HeaderPagesConfigurationComponent,
+    TableDatosClientesComponent,
+    CommonModule,
+    TableDatosChoferesComponent,
+    HeaderConfigurationComponent
+  ],
   templateUrl: './lista-choferes-page.component.html',
   styleUrls: ['./lista-choferes-page.component.css']
 })

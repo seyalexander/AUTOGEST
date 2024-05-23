@@ -6,6 +6,7 @@ import { TableDatosAutosComponent } from '../../organisms/table-datos-autos/tabl
 import { HeaderPagesConfigurationComponent } from '../../../../../../../shared/components/organisms/header-pages-configuration/header-pages-configuration.component';
 import { CommonModule } from '@angular/common';
 import { RegistroDatosAutosPageComponent } from '../registro-datos-autos-page/registro-datos-autos-page.component';
+import { AuthService } from 'src/app/infraestrcuture/driven-adapter/login/auth.service';
 
 @Component({
     selector: 'app-lista-autos-page',
@@ -17,10 +18,14 @@ import { RegistroDatosAutosPageComponent } from '../registro-datos-autos-page/re
 export class ListaAutosPageComponent {
   nombrePagina: String = 'AUTOS'
   isLoading = false;
+  userLoginOn : boolean = false;
   datosAutoslista: Array <autosModel> = [];
   listObservers$: Array<Subscription> = [];
 
-  constructor (private _getAutosUseCase: GetAutosUseCases) {}
+  constructor (
+    private _getAutosUseCase: GetAutosUseCases,
+    private loginService:AuthService
+  ) {}
 
   private autosSubscription: Subscription | undefined;
 
@@ -29,8 +34,17 @@ export class ListaAutosPageComponent {
   //============================================================================
 
   ngOnInit():  void {
+    this.loginService.currentUserLoginOn.subscribe({
+      next:(userLoginOn) => {
+        this.userLoginOn = userLoginOn;
+        console.log(userLoginOn);
 
-    this.obtenerAutosExito()
+        if (this.userLoginOn) {
+          this.obtenerAutosExito();
+        }
+      }
+    })
+
 
   }
 

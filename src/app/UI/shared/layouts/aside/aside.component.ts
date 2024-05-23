@@ -27,7 +27,7 @@ export class AsideComponent {
       {
         name: 'Dashboard',
         icon: 'uil uil-estate',
-        route: ['/dashboard'],
+        route: ['/','home'],
       },
     ];
 
@@ -35,17 +35,88 @@ export class AsideComponent {
       {
         name: ['Configuración'],
         icon: 'uil uil-document-info',
-        route: ['/', 'configuracion']
+        opciones: [
+          {
+            name: ['empresa'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','empresa']
+          },
+          {
+            name: ['choferes'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','choferes']
+          },
+          {
+            name: ['MostrarCliente'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','MostrarCliente']
+          },
+          {
+            name: ['marca autos'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','marca-autos']
+          },
+          {
+            name: ['modelo autos'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','modelo-autos']
+          },
+          {
+            name: ['autos'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','autos']
+          },
+          {
+            name: ['tipo documentos'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','tipo-documentos']
+          },
+          {
+            name: ['empleados'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','empleados']
+          },
+          {
+            name: ['orden trabajo'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','orden-trabajo']
+          },
+          {
+            name: ['reparacion'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','reparacion']
+          },
+          {
+            name: ['usuarios'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','usuarios']
+          },
+          {
+            name: ['familia productos'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','familia-productos']
+          },
+          {
+            name: ['productos'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','productos']
+          },
+          {
+            name: ['usuarios'],
+            icon: 'uil uil-document-info',
+            route: ['/','home','usuarios']
+          }
+        ]
       },
       {
         name: ['Reportes'],
         icon: 'uil uil-document-info',
-        route: ['/', '','']
+        route: ['/','home','']
       },
       {
         name: ['Operaciones'],
         icon: 'uil uil-document-info',
-        route: ['/', 'operacion']
+        route: ['/', 'home','operacion']
       },
     ]
   }

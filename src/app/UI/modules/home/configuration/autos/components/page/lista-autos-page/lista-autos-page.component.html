@@ -1,4 +1,4 @@
-<article>
+<article *ngIf="userLoginOn">
   <div class="modal-registro" *ngIf="showRegistro">
     <app-registro-datos-autos-page
       (cerrarComponenteEvent)="mostrarComponente()"
@@ -15,5 +15,6 @@
       </div>
     </div>
   </main>
+  <p *ngIf="!userLoginOn" class="alert alert-danger">Usuario NO autenticado</p>
 </article>
 

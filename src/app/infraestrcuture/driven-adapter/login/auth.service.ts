@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
+import { LoginRequest } from 'src/app/domain/models/login/login-request';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
@@ -8,12 +9,54 @@ import { environment } from 'src/environments/environment.development';
 })
 export class AuthService {
 
-  private loginUrl = environment.api
+  currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  currentUserData: BehaviorSubject<String> =new BehaviorSubject<String>("");
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.currentUserLoginOn=new BehaviorSubject<boolean>(sessionStorage.getItem("jwt")!=null);
+    this.currentUserData=new BehaviorSubject<String>(sessionStorage.getItem("jwt") || "");
+  }
 
-  login(username: string, password: string): Observable<any> {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.http.get( `${this.loginUrl}/hello/${username}`, { headers });
+  login(credentials:LoginRequest):Observable<any>{
+    return this.http.post<any>(environment.api+"/Login",credentials).pipe(
+      tap( (userData) => {
+        console.log("SERVICIO LOGIN:", userData);
+
+        sessionStorage.setItem("jwt", userData.jwt);
+        this.currentUserData.next(userData.jwt);
+        console.log(userData.jwt);
+
+        this.currentUserLoginOn.next(true);
+      }),
+      map((userData)=> userData.token),
+      catchError(this.handleError)
+    );
+  }
+
+  logout():void{
+    sessionStorage.removeItem("token");
+    this.currentUserLoginOn.next(false);
+  }
+
+  private handleError(error:HttpErrorResponse){
+    if(error.status===0){
+      console.error('Se ha producio un error ', error.error);
+    }
+    else{
+      console.error('Backend retornó el código de estado ', error);
+    }
+    return throwError(()=> new Error('Algo falló. Por favor intente nuevamente.'));
+  }
+
+  get userData():Observable<String>{
+    return this.currentUserData.asObservable();
+  }
+
+  get userLoginOn(): Observable<boolean>{
+    return this.currentUserLoginOn.asObservable();
+  }
+
+  get userToken():String{
+    return this.currentUserData.value;
   }
 }
