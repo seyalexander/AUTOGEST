@@ -1,10 +1,10 @@
+import { SharedModule } from 'src/app/UI/shared/shared.module';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ListaAutosPageComponent } from './lista-autos-page.component';
-import { AppModule } from 'src/app/app.module';
 import { TableDatosAutosComponent } from '../../organisms/table-datos-autos/table-datos-autos.component';
 import { RegistroDatosAutosPageComponent } from '../registro-datos-autos-page/registro-datos-autos-page.component';
-import { SharedModule } from 'src/app/UI/shared/shared.module';
+import { ApplicationModule } from '@angular/core';
+
 
 describe('ListaAutosPageComponent', () => {
   let component: ListaAutosPageComponent;
@@ -12,7 +12,7 @@ describe('ListaAutosPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [AppModule, SharedModule, ListaAutosPageComponent, TableDatosAutosComponent,
+    imports: [ApplicationModule, SharedModule, ListaAutosPageComponent, TableDatosAutosComponent,
         RegistroDatosAutosPageComponent],
 });
     fixture = TestBed.createComponent(ListaAutosPageComponent);

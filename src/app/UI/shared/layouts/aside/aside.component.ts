@@ -87,11 +87,6 @@ export class AsideComponent {
             route: ['/','home','reparacion']
           },
           {
-            name: ['usuarios'],
-            icon: 'uil uil-document-info',
-            route: ['/','home','usuarios']
-          },
-          {
             name: ['familia productos'],
             icon: 'uil uil-document-info',
             route: ['/','home','familia-productos']
